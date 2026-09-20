@@ -1,162 +1,411 @@
-const inicio = document.getElementById("inicio");
-const declaracion = document.getElementById("declaracion");
-const cielo = document.getElementById("cielo");
+/* =========================================
+   ELEMENTOS DE LA PÁGINA
+========================================= */
+
+const inicio =
+    document.getElementById("inicio");
+
+
+const declaracion =
+    document.getElementById("declaracion");
+
+
+const cielo =
+    document.getElementById("cielo");
+
 
 const botonDescubrir =
     document.getElementById("botonDescubrir");
 
+
 const botonUltimo =
     document.getElementById("botonUltimo");
+
 
 const ultimoMensaje =
     document.getElementById("ultimoMensaje");
 
 
-/* =================================
-   BOTÓN PRINCIPAL
-================================= */
-
-botonDescubrir.addEventListener("click", () => {
-
-    /* Ocultar inicio */
-
-    inicio.style.transition = "opacity 1s";
-    inicio.style.opacity = "0";
+const musica =
+    document.getElementById("musicaFondo");
 
 
-    setTimeout(() => {
 
-        inicio.classList.add("oculto");
+/* =========================================
+   CONFIGURACIÓN DE LA MÚSICA
+========================================= */
 
-        declaracion.classList.remove("oculto");
+/*
+La música empieza en volumen 0
+para poder hacer un efecto de
+aparición gradual.
+*/
 
-        window.scrollTo(0, 0);
-
-    }, 1000);
-
-
-    /* Mostrar cielo después */
-
-    setTimeout(() => {
-
-        declaracion.style.transition = "opacity 1.5s";
-        declaracion.style.opacity = "0";
-
-    }, 5000);
+musica.volume = 0;
 
 
-    setTimeout(() => {
 
-        declaracion.classList.add("oculto");
+/* =========================================
+   BOTÓN DESCÚBRELO
+========================================= */
 
-        cielo.classList.remove("oculto");
-
-        crearEstrellas();
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }, 6500);
-
-});
+botonDescubrir.addEventListener(
+    "click",
+    () => {
 
 
-/* =================================
-   CREAR CIELO ESTRELLADO
-================================= */
+        /* ===============================
+           INICIAR MÚSICA
+        =============================== */
+
+        musica.play()
+
+            .then(() => {
+
+                subirVolumen();
+
+            })
+
+            .catch(error => {
+
+                console.log(
+                    "No se pudo reproducir la música:",
+                    error
+                );
+
+            });
+
+
+
+        /* ===============================
+           OCULTAR PANTALLA INICIAL
+        =============================== */
+
+        inicio.style.transition =
+            "opacity 1s";
+
+
+        inicio.style.opacity =
+            "0";
+
+
+
+        setTimeout(
+            () => {
+
+
+                inicio.classList.add(
+                    "oculto"
+                );
+
+
+                declaracion.classList.remove(
+                    "oculto"
+                );
+
+
+                window.scrollTo(
+                    0,
+                    0
+                );
+
+
+            },
+            1000
+        );
+
+
+
+        /* ===============================
+           DESVANECER DECLARACIÓN
+        =============================== */
+
+        setTimeout(
+            () => {
+
+
+                declaracion.style.transition =
+                    "opacity 1.5s";
+
+
+                declaracion.style.opacity =
+                    "0";
+
+
+            },
+            5000
+        );
+
+
+
+        /* ===============================
+           MOSTRAR CIELO
+        =============================== */
+
+        setTimeout(
+            () => {
+
+
+                declaracion.classList.add(
+                    "oculto"
+                );
+
+
+                cielo.classList.remove(
+                    "oculto"
+                );
+
+
+                crearEstrellas();
+
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+
+            },
+            6500
+        );
+
+
+    }
+);
+
+
+
+/* =========================================
+   SUBIR VOLUMEN SUAVEMENTE
+========================================= */
+
+function subirVolumen() {
+
+
+    let volumenActual = 0;
+
+
+    const volumenFinal = 0.35;
+
+
+    const intervalo =
+        setInterval(
+            () => {
+
+
+                volumenActual += 0.01;
+
+
+                if (
+                    volumenActual
+                    >=
+                    volumenFinal
+                ) {
+
+
+                    musica.volume =
+                        volumenFinal;
+
+
+                    clearInterval(
+                        intervalo
+                    );
+
+
+                    return;
+
+                }
+
+
+                musica.volume =
+                    volumenActual;
+
+
+            },
+            100
+        );
+
+}
+
+
+
+/* =========================================
+   CREAR ESTRELLAS
+========================================= */
 
 function crearEstrellas() {
 
+
     const contenedor =
-        document.getElementById("estrellas");
+        document.getElementById(
+            "estrellas"
+        );
 
 
-    /* Evitar estrellas duplicadas */
 
-    if (contenedor.children.length > 0) {
+    /*
+    Evitar crear estrellas
+    dos veces.
+    */
+
+    if (
+        contenedor.children.length > 0
+    ) {
+
         return;
+
     }
 
 
-    const cantidad = 180;
+
+    const cantidad =
+        180;
 
 
-    for (let i = 0; i < cantidad; i++) {
+
+    for (
+        let i = 0;
+        i < cantidad;
+        i++
+    ) {
+
 
         const estrella =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
-        estrella.classList.add("estrella");
+
+        estrella.classList.add(
+            "estrella"
+        );
 
 
-        /* Posición aleatoria */
+
+        /* POSICIÓN */
 
         estrella.style.left =
-            Math.random() * 100 + "%";
+
+            Math.random()
+            * 100
+            + "%";
+
 
         estrella.style.top =
-            Math.random() * 100 + "%";
+
+            Math.random()
+            * 100
+            + "%";
 
 
-        /* Tamaño aleatorio */
+
+        /* TAMAÑO */
 
         const tamaño =
-            Math.random() * 2.5 + 1;
+
+            Math.random()
+            * 2.5
+            + 1;
+
 
         estrella.style.width =
-            tamaño + "px";
+
+            tamaño
+            + "px";
+
 
         estrella.style.height =
-            tamaño + "px";
+
+            tamaño
+            + "px";
 
 
-        /* Duración diferente */
+
+        /* VELOCIDAD DE PARPADEO */
 
         estrella.style.animationDuration =
-            (Math.random() * 3 + 2) + "s";
+
+            (
+                Math.random()
+                * 3
+                + 2
+            )
+            + "s";
 
 
-        /* Retraso */
+
+        /* RETRASO */
 
         estrella.style.animationDelay =
-            (Math.random() * 5) + "s";
+
+            (
+                Math.random()
+                * 5
+            )
+            + "s";
 
 
-        contenedor.appendChild(estrella);
+
+        contenedor.appendChild(
+            estrella
+        );
+
 
     }
 
 }
 
 
-/* =================================
-   ÚLTIMO MENSAJE
-================================= */
 
-botonUltimo.addEventListener("click", () => {
+/* =========================================
+   BOTÓN "UNA ÚLTIMA COSA"
+========================================= */
 
-    ultimoMensaje.classList.remove(
-        "ocultar-mensaje"
-    );
-
-    ultimoMensaje.classList.add(
-        "mostrar-mensaje"
-    );
+botonUltimo.addEventListener(
+    "click",
+    () => {
 
 
-    botonUltimo.style.opacity = "0";
-    botonUltimo.style.pointerEvents = "none";
+        ultimoMensaje.classList.remove(
+            "ocultar-mensaje"
+        );
 
 
-    setTimeout(() => {
+        ultimoMensaje.classList.add(
+            "mostrar-mensaje"
+        );
 
-        ultimoMensaje.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
 
-    }, 300);
 
-});
+        botonUltimo.style.opacity =
+            "0";
+
+
+        botonUltimo.style.pointerEvents =
+            "none";
+
+
+
+        setTimeout(
+            () => {
+
+
+                ultimoMensaje.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "center"
+
+                });
+
+
+            },
+            300
+        );
+
+
+    }
+);

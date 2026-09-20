@@ -1,6 +1,6 @@
-/* =========================
+/* =========================================
    CONFIGURACIÓN GENERAL
-========================= */
+========================================= */
 
 * {
     margin: 0;
@@ -8,50 +8,84 @@
     box-sizing: border-box;
 }
 
+
 html,
 body {
+
     width: 100%;
     min-height: 100%;
+
 }
+
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     background: #020617;
+
     color: white;
+
     overflow-x: hidden;
+
 }
+
 
 button {
+
     font-family: inherit;
+
 }
 
 
-/* =========================
+
+/* =========================================
    PANTALLAS
-========================= */
+========================================= */
 
 .pantalla {
+
     width: 100%;
+
     min-height: 100vh;
+
     position: relative;
+
 }
+
 
 .oculto {
+
     display: none !important;
+
 }
 
 
-/* =========================
-   INICIO
-========================= */
+
+/* =========================================
+   PANTALLA INICIAL
+========================================= */
 
 .inicio {
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
+
     background:
-        radial-gradient(circle at 50% 30%, #172554 0%, transparent 35%),
+
+        radial-gradient(
+            circle at 50% 30%,
+            #172554 0%,
+            transparent 35%
+        ),
+
         linear-gradient(
             180deg,
             #020617 0%,
@@ -59,118 +93,200 @@ button {
             #020617 100%
         );
 
+
     overflow: hidden;
+
 }
 
+
+
 .contenido-inicio {
+
     width: 90%;
+
     max-width: 650px;
 
     text-align: center;
+
     z-index: 10;
 
-    animation: aparecerInicio 2s ease;
+    animation:
+        aparecerInicio
+        2s ease;
+
 }
+
+
 
 .corazon {
+
     font-size: 55px;
+
     margin-bottom: 20px;
 
-    animation: latido 1.5s infinite;
+    animation:
+        latido
+        1.5s infinite;
+
 }
 
+
+
 .pequeno {
+
     text-transform: uppercase;
+
     letter-spacing: 5px;
 
     font-size: 13px;
+
     color: #fde68a;
 
     margin-bottom: 25px;
+
 }
 
+
+
 .contenido-inicio h1 {
-    font-size: clamp(40px, 8vw, 70px);
+
+    font-size:
+        clamp(
+            40px,
+            8vw,
+            70px
+        );
 
     font-weight: normal;
 
     margin-bottom: 30px;
 
-    background: linear-gradient(
-        90deg,
-        #ffffff,
-        #fde68a,
-        #ffffff
-    );
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #fde68a,
+            #ffffff
+        );
+
 
     background-clip: text;
+
     -webkit-background-clip: text;
 
     color: transparent;
+
 }
 
+
+
 .mensaje-inicio {
+
     font-size: 20px;
+
     line-height: 1.8;
 
     max-width: 520px;
+
     margin: auto;
 
     color: #e2e8f0;
+
 }
 
+
+
 .pregunta {
+
     margin-top: 30px;
+
     margin-bottom: 30px;
 
     font-style: italic;
+
     color: #fde68a;
+
 }
 
 
-/* =========================
+
+/* =========================================
    BOTONES
-========================= */
+========================================= */
 
 button {
+
     border: none;
+
     outline: none;
 
     cursor: pointer;
 
-    padding: 16px 30px;
+
+    padding:
+
+        16px
+        30px;
+
 
     border-radius: 50px;
 
+
     font-size: 17px;
 
-    background: linear-gradient(
-        135deg,
-        #facc15,
-        #fde68a
-    );
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #facc15,
+            #fde68a
+        );
+
 
     color: #422006;
 
+
     box-shadow:
-        0 0 20px rgba(250, 204, 21, 0.25),
-        0 0 50px rgba(250, 204, 21, 0.10);
+
+        0 0 20px
+        rgba(250, 204, 21, 0.25),
+
+        0 0 50px
+        rgba(250, 204, 21, 0.10);
+
 
     transition: 0.3s;
+
 }
+
+
 
 button:hover {
-    transform: translateY(-4px) scale(1.03);
+
+    transform:
+
+        translateY(-4px)
+        scale(1.03);
+
 
     box-shadow:
-        0 0 30px rgba(250, 204, 21, 0.45),
-        0 0 70px rgba(250, 204, 21, 0.20);
+
+        0 0 30px
+        rgba(250, 204, 21, 0.45),
+
+        0 0 70px
+        rgba(250, 204, 21, 0.20);
+
 }
 
 
-/* =========================
-   ESTRELLAS INICIO
-========================= */
+
+/* =========================================
+   ESTRELLAS DE INICIO
+========================================= */
 
 .estrellas-inicio::before,
 .estrellas-inicio::after {
@@ -180,45 +296,79 @@ button:hover {
     position: absolute;
 
     width: 3px;
+
     height: 3px;
 
     border-radius: 50%;
 
     background: white;
 
+
     box-shadow:
+
         10vw 10vh white,
+
         20vw 30vh #fde68a,
+
         30vw 15vh white,
+
         40vw 60vh white,
+
         50vw 10vh #fde68a,
+
         60vw 40vh white,
+
         70vw 20vh white,
+
         80vw 70vh #fde68a,
+
         90vw 25vh white,
+
         15vw 75vh white,
+
         35vw 85vh #fde68a,
+
         55vw 75vh white,
+
         75vw 90vh white,
+
         95vw 60vh #fde68a;
 
-    animation: parpadeo 3s infinite alternate;
+
+    animation:
+
+        parpadeo
+        3s infinite alternate;
+
 }
+
+
 
 .estrellas-inicio::after {
-    transform: translate(40px, 80px);
+
+    transform:
+
+        translate(
+            40px,
+            80px
+        );
+
     opacity: 0.5;
+
 }
 
 
-/* =========================
+
+/* =========================================
    DECLARACIÓN
-========================= */
+========================================= */
 
 .declaracion {
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
@@ -226,13 +376,24 @@ button:hover {
     background: #020617;
 
     padding: 30px;
+
 }
+
+
 
 .declaracion-contenido {
-    animation: aparecerDeclaracion 2s ease;
+
+    animation:
+
+        aparecerDeclaracion
+        2s ease;
+
 }
 
+
+
 .antes {
+
     color: #cbd5e1;
 
     font-style: italic;
@@ -240,39 +401,75 @@ button:hover {
     margin-bottom: 25px;
 
     font-size: 18px;
+
 }
+
+
 
 .declaracion h2 {
+
     font-weight: normal;
 
-    font-size: clamp(40px, 8vw, 75px);
+
+    font-size:
+
+        clamp(
+            40px,
+            8vw,
+            75px
+        );
+
 
     line-height: 1.3;
+
 }
 
+
+
 .declaracion h2 span {
+
     display: block;
 
     color: #fde68a;
 
+
     text-shadow:
-        0 0 15px rgba(253, 230, 138, 0.3),
-        0 0 40px rgba(253, 230, 138, 0.15);
+
+        0 0 15px
+        rgba(253, 230, 138, 0.3),
+
+        0 0 40px
+        rgba(253, 230, 138, 0.15);
+
 }
 
 
-/* =========================
+
+/* =========================================
    CIELO
-========================= */
+========================================= */
 
 .cielo {
+
     position: relative;
 
     overflow: hidden;
 
+
     background:
-        radial-gradient(circle at 50% 100%, #172554 0%, transparent 35%),
-        radial-gradient(circle at 20% 20%, #0f2557 0%, transparent 25%),
+
+        radial-gradient(
+            circle at 50% 100%,
+            #172554 0%,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 20% 20%,
+            #0f2557 0%,
+            transparent 25%
+        ),
+
         linear-gradient(
             180deg,
             #020617 0%,
@@ -280,46 +477,68 @@ button:hover {
             #020617 100%
         );
 
-    padding: 80px 20px;
+
+    padding:
+
+        80px
+        20px;
+
 }
 
 
-/* =========================
-   ESTRELLAS JS
-========================= */
+
+/* =========================================
+   ESTRELLAS GENERADAS POR JS
+========================================= */
 
 #estrellas {
+
     position: absolute;
 
     top: 0;
+
     left: 0;
 
     width: 100%;
+
     height: 100%;
 
     overflow: hidden;
 
     pointer-events: none;
+
 }
 
+
+
 .estrella {
+
     position: absolute;
 
     background: white;
 
     border-radius: 50%;
 
-    box-shadow: 0 0 7px white;
+    box-shadow:
 
-    animation: estrellaParpadeo linear infinite;
+        0 0 7px white;
+
+
+    animation:
+
+        estrellaParpadeo
+        linear infinite;
+
 }
 
 
-/* =========================
-   CONTENIDO CIELO
-========================= */
+
+/* =========================================
+   CONTENIDO DEL CIELO
+========================================= */
 
 .contenido-cielo {
+
     position: relative;
 
     z-index: 5;
@@ -331,10 +550,21 @@ button:hover {
     margin: auto;
 
     text-align: center;
+
 }
 
+
+
 .titulo-cielo {
-    font-size: clamp(35px, 7vw, 60px);
+
+    font-size:
+
+        clamp(
+            35px,
+            7vw,
+            60px
+        );
+
 
     font-weight: normal;
 
@@ -342,18 +572,30 @@ button:hover {
 
     color: #f8fafc;
 
-    text-shadow: 0 0 25px rgba(255,255,255,0.2);
 
-    animation: bajarTitulo 2s ease;
+    text-shadow:
+
+        0 0 25px
+        rgba(255,255,255,0.2);
+
+
+    animation:
+
+        bajarTitulo
+        2s ease;
+
 }
 
 
-/* =========================
+
+/* =========================================
    FLOR
-========================= */
+========================================= */
 
 .flor {
+
     width: 220px;
+
     height: 390px;
 
     position: relative;
@@ -361,119 +603,208 @@ button:hover {
     margin: auto;
 
     margin-bottom: 30px;
+
 }
+
 
 
 /* TALLO */
 
 .tallo {
+
     position: absolute;
 
     width: 9px;
+
     height: 250px;
 
     bottom: 0;
+
     left: 50%;
 
-    transform: translateX(-50%);
+
+    transform:
+
+        translateX(-50%);
+
 
     border-radius: 10px;
 
-    background: linear-gradient(
-        90deg,
-        #166534,
-        #22c55e,
-        #14532d
-    );
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #166534,
+            #22c55e,
+            #14532d
+        );
+
 
     transform-origin: bottom;
 
-    animation: crecerTallo 2.5s ease forwards;
+
+    animation:
+
+        crecerTallo
+        2.5s ease forwards;
+
 }
 
 
-/* HOJAS */
+
+/* =========================================
+   HOJAS
+========================================= */
 
 .hoja {
+
     position: absolute;
 
     width: 80px;
+
     height: 35px;
 
-    background: linear-gradient(
-        135deg,
-        #15803d,
-        #4ade80
-    );
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #15803d,
+            #4ade80
+        );
+
 
     opacity: 0;
 
-    animation: aparecerHoja 1s 2s forwards;
+
+    animation:
+
+        aparecerHoja
+        1s 2s forwards;
+
 }
+
+
 
 .hoja-izquierda {
+
     left: -72px;
+
     top: 105px;
 
-    border-radius: 80% 10% 80% 10%;
 
-    transform: rotate(25deg);
+    border-radius:
+
+        80%
+        10%
+        80%
+        10%;
+
+
+    transform:
+
+        rotate(25deg);
+
 }
+
+
 
 .hoja-derecha {
+
     right: -72px;
+
     top: 160px;
 
-    border-radius: 10% 80% 10% 80%;
 
-    transform: rotate(-25deg);
+    border-radius:
+
+        10%
+        80%
+        10%
+        80%;
+
+
+    transform:
+
+        rotate(-25deg);
+
 }
 
 
-/* =========================
-   CABEZA FLOR
-========================= */
+
+/* =========================================
+   CABEZA DE LA FLOR
+========================================= */
 
 .cabeza-flor {
 
     width: 150px;
+
     height: 150px;
 
     position: absolute;
 
     left: 50%;
+
     top: 15px;
 
-    transform: translateX(-50%) scale(0);
+
+    transform:
+
+        translateX(-50%)
+        scale(0);
+
 
     animation:
-        abrirFlor 2s 2.3s
-        cubic-bezier(.34,1.56,.64,1)
+
+        abrirFlor
+        2s 2.3s
+        cubic-bezier(
+            .34,
+            1.56,
+            .64,
+            1
+        )
         forwards;
+
 }
 
 
-/* =========================
+
+/* =========================================
    PÉTALOS
-========================= */
+========================================= */
 
 .petalo {
 
     position: absolute;
 
     width: 45px;
+
     height: 80px;
 
     left: 52px;
+
     top: 35px;
 
-    transform-origin: 50% 40px;
+
+    transform-origin:
+
+        50%
+        40px;
+
 
     border-radius:
-        50% 50%
-        45% 45%;
+
+        50%
+        50%
+        45%
+        45%;
+
 
     background:
+
         linear-gradient(
             180deg,
             #fef08a,
@@ -481,59 +812,118 @@ button:hover {
             #eab308
         );
 
+
     box-shadow:
-        0 0 15px rgba(250,204,21,0.2);
+
+        0 0 15px
+        rgba(250,204,21,0.2);
+
 }
+
 
 
 .p1 {
-    transform: rotate(0deg) translateY(-40px);
+
+    transform:
+
+        rotate(0deg)
+        translateY(-40px);
+
 }
+
 
 .p2 {
-    transform: rotate(45deg) translateY(-40px);
+
+    transform:
+
+        rotate(45deg)
+        translateY(-40px);
+
 }
+
 
 .p3 {
-    transform: rotate(90deg) translateY(-40px);
+
+    transform:
+
+        rotate(90deg)
+        translateY(-40px);
+
 }
+
 
 .p4 {
-    transform: rotate(135deg) translateY(-40px);
+
+    transform:
+
+        rotate(135deg)
+        translateY(-40px);
+
 }
+
 
 .p5 {
-    transform: rotate(180deg) translateY(-40px);
+
+    transform:
+
+        rotate(180deg)
+        translateY(-40px);
+
 }
+
 
 .p6 {
-    transform: rotate(225deg) translateY(-40px);
+
+    transform:
+
+        rotate(225deg)
+        translateY(-40px);
+
 }
+
 
 .p7 {
-    transform: rotate(270deg) translateY(-40px);
+
+    transform:
+
+        rotate(270deg)
+        translateY(-40px);
+
 }
+
 
 .p8 {
-    transform: rotate(315deg) translateY(-40px);
+
+    transform:
+
+        rotate(315deg)
+        translateY(-40px);
+
 }
 
 
-/* CENTRO */
+
+/* =========================================
+   CENTRO DE LA FLOR
+========================================= */
 
 .centro-flor {
 
     position: absolute;
 
     width: 65px;
+
     height: 65px;
 
     left: 42px;
+
     top: 42px;
 
     border-radius: 50%;
 
+
     background:
+
         radial-gradient(
             circle at 35% 35%,
             #92400e,
@@ -541,26 +931,39 @@ button:hover {
             #451a03
         );
 
+
     z-index: 10;
 
+
     box-shadow:
-        inset 0 0 10px rgba(0,0,0,.3),
-        0 0 20px rgba(250,204,21,.3);
+
+        inset 0 0 10px
+        rgba(0,0,0,.3),
+
+        0 0 20px
+        rgba(250,204,21,.3);
+
 }
 
 
-/* =========================
+
+/* =========================================
    MENSAJE FINAL
-========================= */
+========================================= */
 
 .mensaje-final {
 
     opacity: 0;
 
+
     animation:
+
         aparecerMensaje
         2s 4s forwards;
+
 }
+
+
 
 .mensaje-final h3 {
 
@@ -571,22 +974,31 @@ button:hover {
     color: #fde68a;
 
     margin-bottom: 25px;
+
 }
+
+
 
 .mensaje-final p {
 
     max-width: 520px;
 
+
     margin:
+
         0 auto
         20px auto;
+
 
     font-size: 18px;
 
     line-height: 1.8;
 
     color: #e2e8f0;
+
 }
+
+
 
 .firma {
 
@@ -595,12 +1007,14 @@ button:hover {
     font-style: italic;
 
     font-size: 20px !important;
+
 }
 
 
-/* =========================
-   ÚLTIMO BOTÓN
-========================= */
+
+/* =========================================
+   BOTÓN FINAL
+========================================= */
 
 #botonUltimo {
 
@@ -608,39 +1022,69 @@ button:hover {
 
     opacity: 0;
 
+
     animation:
+
         aparecerMensaje
         2s 5s forwards;
+
 }
 
 
-/* =========================
+
+/* =========================================
    ÚLTIMO MENSAJE
-========================= */
+========================================= */
 
 .ultimo-mensaje {
 
     max-width: 550px;
 
+
     margin:
+
         40px auto
         20px auto;
 
+
     padding: 30px;
 
-    border: 1px solid rgba(253,230,138,.25);
+
+    border:
+
+        1px solid
+        rgba(253,230,138,.25);
+
 
     border-radius: 20px;
 
-    background: rgba(255,255,255,.04);
 
-    backdrop-filter: blur(8px);
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .04
+        );
+
+
+    backdrop-filter:
+
+        blur(8px);
+
 
     transition: 1s;
 
+
     box-shadow:
-        0 0 30px rgba(250,204,21,.08);
+
+        0 0 30px
+        rgba(250,204,21,.08);
+
 }
+
+
 
 .ultimo-mensaje p {
 
@@ -649,7 +1093,10 @@ button:hover {
     line-height: 1.7;
 
     color: #e2e8f0;
+
 }
+
+
 
 .ultimo-mensaje span {
 
@@ -660,13 +1107,18 @@ button:hover {
     font-size: 24px;
 
     color: #fde68a;
+
 }
+
+
 
 .ocultar-mensaje {
 
     opacity: 0;
 
-    transform: translateY(30px);
+    transform:
+
+        translateY(30px);
 
     pointer-events: none;
 
@@ -679,282 +1131,466 @@ button:hover {
     margin: 0 auto;
 
     border: none;
+
 }
+
+
 
 .mostrar-mensaje {
 
     opacity: 1;
 
-    transform: translateY(0);
+    transform:
+
+        translateY(0);
 
     height: auto;
 
     pointer-events: auto;
+
 }
 
 
-/* =========================
+
+/* =========================================
    ESTRELLAS FUGACES
-========================= */
+========================================= */
 
 .estrella-fugaz {
 
     position: absolute;
 
     width: 150px;
+
     height: 2px;
 
+
     background:
+
         linear-gradient(
             90deg,
             white,
             transparent
         );
 
+
     opacity: 0;
 
-    transform: rotate(-35deg);
+
+    transform:
+
+        rotate(-35deg);
+
 
     animation:
+
         fugaz
         7s infinite;
+
 }
+
+
 
 .fugaz1 {
 
     top: 15%;
+
     left: 75%;
 
     animation-delay: 1s;
+
 }
+
 
 .fugaz2 {
 
     top: 35%;
+
     left: 90%;
 
     animation-delay: 5s;
+
 }
+
 
 .fugaz3 {
 
     top: 60%;
+
     left: 70%;
 
     animation-delay: 9s;
+
 }
 
 
-/* =========================
+
+/* =========================================
    ANIMACIONES
-========================= */
+========================================= */
 
 @keyframes aparecerInicio {
 
     from {
+
         opacity: 0;
-        transform: translateY(20px);
+
+        transform:
+
+            translateY(20px);
+
     }
 
+
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+
+            translateY(0);
+
     }
+
 }
+
 
 
 @keyframes latido {
 
     0%,
     100% {
-        transform: scale(1);
+
+        transform:
+
+            scale(1);
+
     }
 
+
     50% {
-        transform: scale(1.15);
+
+        transform:
+
+            scale(1.15);
+
     }
+
 }
+
 
 
 @keyframes parpadeo {
 
     from {
+
         opacity: .3;
+
     }
 
+
     to {
+
         opacity: 1;
+
     }
+
 }
+
 
 
 @keyframes aparecerDeclaracion {
 
     from {
+
         opacity: 0;
-        transform: scale(.95);
+
+        transform:
+
+            scale(.95);
+
     }
 
+
     to {
+
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+
+            scale(1);
+
     }
+
 }
+
 
 
 @keyframes bajarTitulo {
 
     from {
+
         opacity: 0;
-        transform: translateY(-30px);
+
+        transform:
+
+            translateY(-30px);
+
     }
 
+
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+
+            translateY(0);
+
     }
+
 }
+
 
 
 @keyframes crecerTallo {
 
     from {
+
         transform:
+
             translateX(-50%)
             scaleY(0);
+
     }
 
+
     to {
+
         transform:
+
             translateX(-50%)
             scaleY(1);
+
     }
+
 }
+
 
 
 @keyframes aparecerHoja {
 
     from {
+
         opacity: 0;
+
     }
 
+
     to {
+
         opacity: 1;
+
     }
+
 }
+
 
 
 @keyframes abrirFlor {
 
     from {
+
         transform:
+
             translateX(-50%)
             scale(0)
             rotate(-30deg);
 
         opacity: 0;
+
     }
 
+
     to {
+
         transform:
+
             translateX(-50%)
             scale(1)
             rotate(0);
 
         opacity: 1;
+
     }
+
 }
+
 
 
 @keyframes aparecerMensaje {
 
     from {
+
         opacity: 0;
-        transform: translateY(30px);
+
+        transform:
+
+            translateY(30px);
+
     }
 
+
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+
+            translateY(0);
+
     }
+
 }
+
 
 
 @keyframes estrellaParpadeo {
 
     0%,
     100% {
+
         opacity: .15;
-        transform: scale(.7);
+
+        transform:
+
+            scale(.7);
+
     }
 
+
     50% {
+
         opacity: 1;
-        transform: scale(1.4);
+
+        transform:
+
+            scale(1.4);
+
     }
+
 }
+
 
 
 @keyframes fugaz {
 
     0% {
+
         opacity: 0;
+
+
         transform:
+
             translate(0,0)
             rotate(-35deg);
+
     }
+
 
     5% {
+
         opacity: 1;
+
     }
+
 
     20% {
+
         opacity: 0;
+
 
         transform:
-            translate(-500px,300px)
+
+            translate(
+                -500px,
+                300px
+            )
             rotate(-35deg);
+
     }
 
+
     100% {
+
         opacity: 0;
+
     }
+
 }
 
 
-/* =========================
+
+/* =========================================
    CELULARES
-========================= */
+========================================= */
 
 @media (max-width: 600px) {
 
+
     .contenido-inicio {
-        padding: 30px 10px;
+
+        padding:
+
+            30px
+            10px;
+
     }
+
 
     .mensaje-inicio {
+
         font-size: 17px;
+
     }
+
 
     .cielo {
+
         padding:
-            60px 15px
-            80px 15px;
+
+            60px
+            15px
+            80px
+            15px;
+
     }
+
 
     .titulo-cielo {
+
         margin-bottom: 50px;
+
     }
+
 
     .flor {
-        transform: scale(.9);
+
+        transform:
+
+            scale(.9);
 
         margin-top: -20px;
+
         margin-bottom: 0;
+
     }
 
+
     .mensaje-final p {
+
         font-size: 16px;
+
     }
 
 }
